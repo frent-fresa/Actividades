@@ -25,7 +25,7 @@ if (!$existe) {
     }
 } else {
     echo "El usuario ya existe.<br>";
-    echo "<a href='registro_login.html'>Inténtalo de nuevo</a>";
+    echo "<a href='index.html'>Inténtalo de nuevo</a>";
 }
 
 mysqli_close($conexion);
