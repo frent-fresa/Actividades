@@ -1,8 +1,8 @@
 <?php
-$servidor = "Actividades";
+$servidor = "localhost";
 $usuario = "frent-fresa";
 $contrasenha = "";
-$BD = "actividades";
+$BD = "actividades.sql";
 
 $conexion = mysqli_connect($servidor, $usuario, $contrasenha, $BD);
 if (!$conexion) {
