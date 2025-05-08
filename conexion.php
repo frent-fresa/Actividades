@@ -1,9 +1,9 @@
 <?php
 // Load environment variables
-$servidor = getenv('DB_SERVER');
-$usuario = getenv('DB_USER');
-$contrasenha = getenv('DB_PASSWORD');
-$BD = getenv('DB_NAME');
+$servidor = getenv('localhost');
+$usuario = getenv('root');
+$contrasenha = getenv('');
+$BD = getenv('actividades');
 
 // Establish database connection
 $conexion = mysqli_connect($servidor, $usuario, $contrasenha, $BD);
