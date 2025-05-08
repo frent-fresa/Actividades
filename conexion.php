@@ -1,14 +1,22 @@
 <?php
-$servidor = "localhost";
-$usuario = "frent-fresa";
-$contrasenha = "";
-$BD = "actividades.sql";
+// Load environment variables
+$servidor = getenv('DB_SERVER');
+$usuario = getenv('DB_USER');
+$contrasenha = getenv('DB_PASSWORD');
+$BD = getenv('DB_NAME');
 
+// Establish database connection
 $conexion = mysqli_connect($servidor, $usuario, $contrasenha, $BD);
+
+// Check connection
 if (!$conexion) {
-    echo "Fallo la conexion <br>";
-    die("Connection failed: " . mysqli_connect_error());
-} else {
-    echo "Conexion exitosa";
+    error_log("Database connection failed: " . mysqli_connect_error());
+    die("An error occurred while connecting to the database. Please try again later.");
 }
+
+// Connection successful
+// Uncomment for debugging: echo "Conexion exitosa";
+
+// Close connection when done
+// mysqli_close($conexion);
 ?>
