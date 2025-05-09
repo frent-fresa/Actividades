@@ -1,12 +1,29 @@
+<?php 
+// Conexión a la base de datos
+$servidor = "localhost"; // Este es el valor correcto en XAMPP
+$usuario = "root";       // Usuario por defecto en XAMPP
+$contrasenha = "";       // Contraseña vacía por defecto
+$BD = "actividades";
+
+$conexion = mysqli_connect($servidor, $usuario, $contrasenha, $BD);
+
+if (!$conexion) {
+    echo "Fallo la conexión<br>";
+    die("Connection failed: " . mysqli_connect_error());
+} 
+?>
+
+<!DOCTYPE html>
 <html>
 <head>
     <title>Página de Registro</title>
 </head>
 <body>
     <h1>Formulario de Registro</h1>
+
     <!-- Formulario para enviar los datos de usuario, correo y contraseña -->
     <form action="ConexionCrearUsuario.php" method="POST">
-        <input type="int" name="usuario" placeholder="Usuario" required><br>
+        <input type="text" name="usuario" placeholder="Usuario" required><br>
         <input type="email" name="correo" placeholder="Correo" required><br>
         <input type="password" name="password" placeholder="Contraseña" required><br>
         <button type="submit">Registrarse</button>
